@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: x86-iotagent
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
@@ -20,7 +20,7 @@ spec:
               - key: kubernetes.io/hostname
                 operator: In
                 values:
-                - worker1
+                - {{ .Values.nodes }}
       containers:
       - name: x86-mosquitto
         image: toke/mosquitto
