@@ -35,9 +35,9 @@ spec:
             name: mqtt-log
           - mountPath: /mqtt/data
             name: mqtt-data
-          # - mountPath: /mqtt/config/mosquitto.conf
-            # subPath: mosquitto.conf
-            # name: x86-mqtt-config
+          - mountPath: /mqtt/config/mosquitto.conf
+            subPath: mosquitto.conf
+            name: x86-mqtt-config
       - name: x86-mongo
         image: mongo
         ports:
