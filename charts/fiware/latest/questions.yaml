@@ -1,0 +1,15 @@
+categories:
+- IoT
+- Fog
+questions:
+- variable: nodes
+  default: "cloud-worker1"
+  description: "which node will iotagent will be"
+  label: select node
+  type: string
+
+- variable: replicas
+  default: 1
+  description: "select replicas"
+  label: replicas
+  type: int

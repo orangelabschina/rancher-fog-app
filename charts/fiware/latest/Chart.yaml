@@ -1,0 +1,17 @@
+name: orion
+version: 0.1
+appVersion: 0.1
+description: Orange Labs China Orion
+keywords:
+- IoT
+- NGSI
+- FOG
+home: https://www.orange.com
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png
+sources:
+- https://github.com/telefonicaid/fiware-orion
+maintainers:
+- name: kun
+  email: kun.qian@orange.com
+- name: yanjun
+  email: yanjun.chen@orange.com

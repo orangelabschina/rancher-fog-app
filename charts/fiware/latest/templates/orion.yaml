@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: cloud-app
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: cloud-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - {{ .Values.nodes }}
+      containers:
+      - name: cloud-mongo
+        image: mongo
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+          - mountPath: /data/db
+            name: cloud-mongo-db
+          - mountPath: /etc/mongodb.conf
+            subPath: mongodb.conf
+            name: cloud-mongo-config
+      - name: cloud-orion
+        image: fiware/orion
+        ports:
+        - containerPort: 1026
+        args: ["-dbhost", "localhost:27017", "-logLevel", "INFO"]
+      - name: cloud-freeboard
+        image: orangelabschina/freeboard
+        ports:
+        - containerPort: 80
+      volumes:
+        - name: cloud-mongo-db
+          hostPath: 
+            path: /home/ubuntu/db
+        - name: cloud-mongo-config
+          configMap:
+            name: cloud-mongo-config
