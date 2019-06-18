@@ -83,12 +83,12 @@ data:
 
             //host: '192.168.12.206',
             // host: '0.0.0.0',
-            host: '192.168.12.220',
+            host: {{ .Values.orionAddress }},
             /**
              * Port where the Context Broker is listening.
              */
             // port: '8081'
-            port: '30222'
+            port: {{ .Values.orionPort }}
         },
 
         /**

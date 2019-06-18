@@ -72,7 +72,7 @@ spec:
             # type: Directory
         - name: mongo-db
           hostPath: 
-            path: /home/ubuntu/db
+            path: {{ .Values.mongodbPath }}
             # type: Directory
         - name: x86-mqtt-config
           configMap:
