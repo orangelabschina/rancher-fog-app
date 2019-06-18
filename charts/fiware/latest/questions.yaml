@@ -13,3 +13,9 @@ questions:
   description: "select replicas"
   label: replicas
   type: int
+
+- variable: mongodb-path
+  default: "/home/mongo/db"
+  description: "mongodb store path"
+  label: mongodb path
+  type: string

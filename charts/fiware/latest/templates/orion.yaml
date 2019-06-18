@@ -44,7 +44,7 @@ spec:
       volumes:
         - name: cloud-mongo-db
           hostPath: 
-            path: /home/ubuntu/db
+            path: {{ .Values.mongodb-path }}
         - name: cloud-mongo-config
           configMap:
             name: cloud-mongo-config
