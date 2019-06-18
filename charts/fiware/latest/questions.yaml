@@ -14,7 +14,7 @@ questions:
   label: replicas
   type: int
 
-- variable: mongodb-path
+- variable: mongodbPath
   default: "/home/mongo/db"
   description: "mongodb store path"
   label: mongodb path
