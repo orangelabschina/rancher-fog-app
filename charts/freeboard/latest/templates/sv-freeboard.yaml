@@ -5,7 +5,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: cloud-app
+    app: freeboard-app
   ports:
   - name: freeboard
     protocol: TCP
