@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: freeboard-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: freeboard-app
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: freeboard-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions: 
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - {{ .Values.nodes }}
+      containers:
+      - name: freeboard
+        image: orangelabschina/freeboard
+        ports:
+        - containerPort: 80

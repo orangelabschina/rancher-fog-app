@@ -37,10 +37,6 @@ spec:
         ports:
         - containerPort: 1026
         args: ["-dbhost", "localhost:27017", "-logLevel", "INFO"]
-      - name: cloud-freeboard
-        image: orangelabschina/freeboard
-        ports:
-        - containerPort: 80
       volumes:
         - name: cloud-mongo-db
           hostPath: 
