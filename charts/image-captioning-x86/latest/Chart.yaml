@@ -1,0 +1,19 @@
+name: image-captioning-x86  
+version: 0.1
+appVersion: 0.1
+description: Orange Labs China Image Captioning
+keywords:
+- IoT
+- NGSI
+- FOG
+- Image Captioning
+- AI
+home: https://www.orange.com
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png
+sources:
+- https://gitlab.forge.orange-labs.fr/cfrn8312/model-image-captioning
+maintainers:
+- name: kun.qian
+  email: kun.qian@orange.com
+- name: yanjun.chen
+  email: yanjun.chen@orange.com
