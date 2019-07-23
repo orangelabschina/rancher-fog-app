@@ -26,16 +26,16 @@ spec:
         image: orangelabschina/model-image-captioning:v0
         env:
         - name: FRAME_INTERVAL    
-          value: {{ .Values.frame_interval}}
+          value: {{ .Values.frame_interval }}
         - name: RES_URL
-          value: {{ .Values.stream_url}}
+          value: {{ .Values.stream_url }}
       - name: result-publisher
         image: orangelabschina/result_publisher:v0
         env:
         - name: TASKID
-          value: {{ .Values.task_id}}
+          value: {{ .Values.task_id }}
         - name: ORION_HOST_PORT
-          value: "192.168.12.222:30458"
+          value: {{ .Values.orion_host_port }}
       - name: message-queue
         image: redis
         ports:
