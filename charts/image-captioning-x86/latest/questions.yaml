@@ -14,11 +14,11 @@ questions:
   label: replicas
   type: int
 
-- variable: frame_interval
-  default: "3"
-  description: "frame capture interval, should be integer"
-  label: frame capture interval
-  type: string
+# - variable: frame_interval
+#   default: "3"
+#   description: "frame capture interval, should be integer"
+#   label: frame capture interval
+#   type: string
 
 - variable: stream_url
   default: "http://192.168.12.254:8090/stream.mjpg" 

@@ -25,8 +25,8 @@ spec:
       - name: model-image-captioning
         image: orangelabschina/model-image-captioning-x86
         env:
-        - name: FRAME_INTERVAL    
-          value: {{ .Values.frame_interval }}
+        # - name: FRAME_INTERVAL    
+          # value: {{ .Values.frame_interval }}
         - name: RES_URL
           value: {{ .Values.stream_url }}
       - name: result-publisher
