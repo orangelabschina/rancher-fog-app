@@ -23,14 +23,14 @@ spec:
                 - {{ .Values.nodes }}
       containers:
       - name: model-image-captioning
-        image: orangelabschina/model-image-captioning:v0
+        image: orangelabschina/model-image-captioning-x86
         env:
         - name: FRAME_INTERVAL    
           value: {{ .Values.frame_interval }}
         - name: RES_URL
           value: {{ .Values.stream_url }}
       - name: result-publisher
-        image: orangelabschina/result_publisher:v0
+        image: orangelabschina/result_publisher
         env:
         - name: TASKID
           value: {{ .Values.task_id }}
