@@ -39,7 +39,7 @@ spec:
             subPath: mosquitto.conf
             name: arm64-mqtt-config
       - name: arm64-mongo
-        image: dhermanns/rpi-mongo
+        image: rakhnin/mongo-arm64
         ports:
         - containerPort: 27017
         volumeMounts:
