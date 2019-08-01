@@ -1,4 +1,4 @@
-name: iot-agent for arm 64
+name: iot-agent-arm64
 version: 0.1
 appVersion: 0.1
 description: Orange Labs China IoT Agent for ARM 64
