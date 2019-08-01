@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arm64-iotagent-deployment
+spec:
+  selector:
+    matchLabels:
+      app: arm64-iotagent
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: arm64-iotagent
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - {{ .Values.nodes }}
+      containers:
+      - name: arm64-mosquitto
+        image: fstehle/rpi-mosquitto
+        ports:
+        - containerPort: 9001
+        - containerPort: 1883
+        volumeMounts:
+          - mountPath: /mqtt/config
+            name: mqtt-config
+            # readOnly: true
+          - mountPath: /mqtt/log
+            name: mqtt-log
+          - mountPath: /mqtt/data
+            name: mqtt-data
+          - mountPath: /mqtt/config/mosquitto.conf
+            subPath: mosquitto.conf
+            name: arm64-mqtt-config
+      - name: arm64-mongo
+        image: dhermanns/rpi-mongo
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+          - mountPath: /data/db
+            name: mongo-db
+          - mountPath: /etc/mongodb.conf
+            subPath: mongodb.conf
+            name: arm64-mongo-config
+      - name: arm64-iotagent
+        image: orangelabschina/iot-agent-arm
+        ports:
+        - containerPort: 4041
+        - containerPort: 7896
+        volumeMounts:
+          - mountPath: /opt/iotaul/config.js
+            subPath: config.js
+            name: arm64-iotagent-config
+      volumes:
+        - name: mqtt-config
+          hostPath: 
+            path: /srv/mqtt/config
+            # type: Directory
+        - name: mqtt-log
+          hostPath: 
+            path: /srv/mqtt/log
+            # type: Directory
+        - name: mqtt-data
+          hostPath: 
+            path: /srv/mqtt/data
+            # type: Directory
+        - name: mongo-db
+          hostPath: 
+            path: {{ .Values.mongodbPath }}
+            # type: Directory
+        - name: arm64-mqtt-config
+          configMap:
+            name: arm64-mqtt-config
+        - name: arm64-iotagent-config
+          configMap:
+            name: arm64-iotagent-config
+        - name: arm64-mongo-config
+          configMap:
+            name: arm64-mongo-config
+
+
+            
+

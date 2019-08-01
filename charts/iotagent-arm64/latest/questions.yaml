@@ -1,0 +1,33 @@
+categories:
+- IoT
+- Fog
+questions:
+- variable: nodes
+  default: "worker2"
+  description: "which node will iotagent will be"
+  label: select node
+  type: string
+
+- variable: replicas
+  default: 1
+  description: "select replicas"
+  label: replicas
+  type: int
+
+- variable: mongodbPath
+  default: "/home/mongo/db"
+  description: "mongodb store path"
+  label: mongodb path
+  type: string
+
+- variable: orionAddress
+  default: "192.168.12.220"
+  description: "orion context broker address"
+  label: orion address
+  type: string
+
+- variable: orionPort
+  default: 0
+  description: "orion context broker port"
+  label: orion port
+  type: int

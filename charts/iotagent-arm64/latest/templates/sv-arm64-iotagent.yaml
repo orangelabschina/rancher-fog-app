@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sv-arm64-iotagent
+spec:
+  type: NodePort
+  selector:
+    app: arm64-iotagent
+  ports:
+  - name: iotagent-receive
+    protocol: TCP
+    port: 7896
+    targetPort: 7896
+  - name: iotagent-send
+    protocol: TCP
+    port: 4041
+    targetPort: 4041
+  - name: mongo-1
+    protocol: TCP
+    port: 1883
+    targetPort: 1883
+  - name: mongo-2
+    protocol: TCP
+    port: 9001
+    targetPort: 9001
+
