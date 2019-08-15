@@ -21,7 +21,7 @@ questions:
   type: string
 
 - variable: orionAddress
-  default: "192.168.12.220"
+  default: "\'192.168.12.220\'"
   description: "orion context broker address"
   label: orion address
   type: string
