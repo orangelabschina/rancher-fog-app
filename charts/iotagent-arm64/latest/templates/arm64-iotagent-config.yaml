@@ -32,7 +32,7 @@ data:
         /**
          * Host where the MQTT Broker is located.
          */
-        host: '0.0.0.0',
+        host: 'localhost',
 
         /**
          * Port where the MQTT Broker is listening
@@ -202,7 +202,7 @@ data:
          * URL Where the IOTA Will listen for incoming updateContext and queryContext requests (for commands and passive
          * attributes). This URL will be sent in the Context Registration requests.
          */
-        providerUrl: 'http://0.0.0.0:4041',
+        providerUrl: 'http://localhost:4041',
 
         /**
          * Default maximum expire date for device registrations.
