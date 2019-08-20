@@ -1,0 +1,51 @@
+categories:
+- IoT
+- Fog
+questions:
+- variable: nodes
+  default: "worker2"
+  description: "which node will iotagent will be"
+  label: select node
+  type: string
+
+- variable: replicas
+  default: 1
+  description: "select replicas"
+  label: replicas
+  type: int
+
+- variable: frame_interval
+  default: "5"
+  description: "frame capture interval, should be integer"
+  label: frame capture interval
+  type: string
+
+- variable: stream_url
+  default: "http://192.168.12.254:8090/stream.mjpg"
+  description: "video stream url"
+  label: video stream url (e.x. http://192.168.12.254:8090/stream.mjpg)
+  type: string
+
+- variable: beam_size
+  default: "1"
+  description: "counts of caption output"
+  label: caption counts
+  type: string
+
+- variable: max_caption_length
+  default: "20"
+  description: "max caption length"
+  label: max caption length
+  type: string
+
+- variable: task_id
+  default: "IMGCAP_ARM_0001"
+  description: "task id"
+  label: task id should be unique (e.x. IMGCAP_ARM_0001)
+  type: string
+
+- variable: orion_host_port
+  default: "192.168.12.144:30458"
+  description: "orion host and port"
+  label: orion host and port (e.x. 192.168.12.144:30458)
+  type: string
