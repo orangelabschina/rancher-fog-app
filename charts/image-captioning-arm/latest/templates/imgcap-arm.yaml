@@ -23,12 +23,17 @@ spec:
                 - {{ .Values.nodes }}
       containers:
       - name: model-image-captioning
-        image: orangelabschina/model-image-captioning-x86
+        image: orangelabschina/image_caption_arm64:v1.0
         env:
-        # - name: FRAME_INTERVAL    
-          # value: {{ .Values.frame_interval }}
+        - name: FRAME_INTERVAL
+          value: {{ .Values.frame_interval }}
         - name: RES_URL
           value: {{ .Values.stream_url }}
+        - name: beam_size
+          value: {{ .Values.beam_size }}
+        - name: max_caption_length
+          value: {{ .Values.max_caption_length }}
+
       - name: result-publisher
         image: orangelabschina/result_publisher
         env:
