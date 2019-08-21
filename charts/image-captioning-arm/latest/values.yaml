@@ -7,5 +7,5 @@ image:
   tag: v1.0
   pullPolicy: IfNotPresent
 
-nodeSelector: {"worker1"}
+#nodeSelector: {"worker1"}
 
