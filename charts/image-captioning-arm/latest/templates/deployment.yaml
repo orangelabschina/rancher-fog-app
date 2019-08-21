@@ -27,13 +27,13 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: FRAME_INTERVAL
-          value: {{ .Values.frame_interval }}
+          value: "5"
         - name: RES_URL
           value: {{ .Values.stream_url }}
         - name: beam_size
-          value: {{ .Values.beam_size }}
+          value: "1"
         - name: max_caption_length
-          value: {{ .Values.max_caption_length }}
+          value: "20"
 
       - name: result-publisher
         image: orangelabschina/result_publisher_arm64
