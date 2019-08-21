@@ -36,7 +36,7 @@ spec:
           value: {{ .Values.max_caption_length }}
 
       - name: result-publisher
-        image: orangelabschina/result_publisher
+        image: orangelabschina/result_publisher_arm64
         env:
         - name: TASKID
           value: {{ .Values.task_id }}
