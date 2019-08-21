@@ -43,6 +43,6 @@ spec:
         - name: ORION_HOST_PORT
           value: {{ .Values.orion_host_port }}
       - name: message-queue
-        image: redis
+        image: arm64v8/redis
         ports:
         - containerPort: 6379
