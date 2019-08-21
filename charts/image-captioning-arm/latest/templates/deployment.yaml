@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v1.0
 kind: Deployment
 metadata:
   name: imgcap-deployment
@@ -22,8 +22,9 @@ spec:
                 values:
                 - {{ .Values.nodes }}
       containers:
-      - name: model-image-captioning
-        image: orangelabschina/image_caption_arm64:v1.0
+      - name:  {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: FRAME_INTERVAL
           value: {{ .Values.frame_interval }}
