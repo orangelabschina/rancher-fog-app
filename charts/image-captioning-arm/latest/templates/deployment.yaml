@@ -35,6 +35,17 @@ spec:
         # - name: max_caption_length
         #   value: "20"
 
+        # https://blog.csdn.net/weixin_36171533/article/details/82771934
+        # Handle "Deployment does not have minimum availability."
+        resources:
+          requests:
+            cpu: "2000m"         #cpu最低2000微核，既2个核
+            memory: "9000Mi"   #内存最低是9000M
+          limits:
+            cpu: "8000m"     #cpu最大是8核
+            memory: "12000Mi"   #内存最低是12000M
+
+
       - name: result-publisher
         image: orangelabschina/result_publisher_arm64
         env:
