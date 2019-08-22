@@ -40,10 +40,10 @@ spec:
         resources:
           requests:
             cpu: "2000m"         #cpu最低2000微核，既2个核
-            memory: "5500Mi"   #内存最低是9000M
+            memory: "2000Mi"   #内存最低是9000M
           limits:
             cpu: "4000m"     #cpu最大是8核
-            memory: "5800Mi"   #内存最低是12000M
+            memory: "3000Mi"   #内存最低是12000M
 
 
       - name: result-publisher
