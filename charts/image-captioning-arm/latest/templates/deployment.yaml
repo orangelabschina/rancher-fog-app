@@ -44,7 +44,7 @@ spec:
           limits:
             cpu: "4000m"     #cpu最大是8核
             memory: "3000Mi"   #内存最低是12000M
-            nvidia.com/gpu: 1 # requesting 1 GPU
+            alpha.kubernetes.io/nvidia-gpu: 1 # requesting 1 GPU
 
 
       - name: result-publisher
