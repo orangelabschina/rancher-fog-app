@@ -40,8 +40,8 @@ questions:
   type: string
 
 - variable: orion_host_port
-  default: "192.168.12.222:30458"
+  default: "192.168.12.222:32130"
   description: "orion host and port"
-  label: orion host and port (e.x. 192.168.12.222:30458)
+  label: orion host and port (e.x. 192.168.12.222:32130)
   type: string
 
