@@ -1,4 +1,4 @@
-name: image-captioning-arm-1
+name: image-captioning-arm-needGPU
 version: 0.1
 appVersion: 0.1
 description: Orange Labs China Image Captioning
