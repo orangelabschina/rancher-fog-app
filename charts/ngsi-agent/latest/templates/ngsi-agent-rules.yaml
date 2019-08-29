@@ -1,0 +1,38 @@
+apiVersion: v1
+data:
+  rules.json: |
+    {
+      "rules" : [
+        {
+          "entity" : "IMGCAP_0001",
+          "attr" : "result",
+          "op" : "contains",
+          "value" : "toilet",
+          "positions" : [
+            {
+              "x": 1.0,
+              "y": 2.0
+            }
+          ]
+        },
+        {
+          "entity" : "IMGCAP_0001",
+          "attr" : "result",
+          "op" : "contains",
+          "value" : "Orange",
+          "positions" : [
+            {
+              "x": 1.0,
+              "y": 2.0
+            },
+            {
+              "x": 3.0,
+              "y": 2.0
+            }
+          ]
+        }
+      ]
+    }
+kind: ConfigMap
+metadata:
+  name: ngsi-agent-rules
