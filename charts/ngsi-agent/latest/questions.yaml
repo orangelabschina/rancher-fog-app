@@ -27,7 +27,7 @@ questions:
   type: string
 
 - variable: ngsi_agent_server
-  default: "http://192.168.12.141:5000"
-  description: "ngsi-agent self server (sample: \"http://192.168.12.141:5000\")"
+  default: "http://192.168.12.141:31111"
+  description: "ngsi-agent self server (sample: \"http://192.168.12.141:31111\")"
   label: ngsi-agent self server
   type: string
