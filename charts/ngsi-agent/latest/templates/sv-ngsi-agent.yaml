@@ -11,4 +11,4 @@ spec:
     protocol: TCP
     port: 1718
     targetPort: 1718
-    NodePort: 31111
+    nodePort: 31111
