@@ -39,11 +39,11 @@ spec:
         # Handle "Deployment does not have minimum availability."
         resources:
           requests:
-            cpu: "2000m"         #cpu最低1000微核，既2个核
-            memory: "600Mi"   #内存最低是600M
+            cpu: "1000m"         #cpu最低1000微核，既1个核
+            memory: "500Mi"   #内存最低是500M
           limits:
             cpu: "4000m"     #cpu最大是4核
-            memory: "4000Mi"   #内存最大是4000M
+            memory: "3000Mi"   #内存最大是3000M
             # nvidia.com/gpu: 1 # requesting 1 GPU
 
 
