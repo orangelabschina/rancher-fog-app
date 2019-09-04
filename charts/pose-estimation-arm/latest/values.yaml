@@ -5,7 +5,8 @@
 image:
   repository: orangelabschina/pose_estimation_arm64
   tag: latest
-  pullPolicy: IfNotPresent
+  #pullPolicy: IfNotPresent 
+  pullPolicy: Always
 
 #nodeSelector: {"worker1"}
 
