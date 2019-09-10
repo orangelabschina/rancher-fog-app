@@ -4,7 +4,7 @@
 
 image:
   repository: orangelabschina/image_caption_arm64
-  tag: v1.1tfcpu
+  tag: latest
   #pullPolicy: IfNotPresent 
   pullPolicy: Always
 
