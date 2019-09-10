@@ -30,6 +30,8 @@ spec:
         #   value: "5"
         - name: RES_URL
           value: {{ .Values.stream_url }}
+        - name: HOST_URL
+          value: {{ .Values.host_url }}
         # - name: beam_size
         #   value: "1"
         # - name: max_caption_length

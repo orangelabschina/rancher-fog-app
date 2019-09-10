@@ -10,13 +10,13 @@ questions:
 
 - variable: stream_url
   default: "http://192.168.12.254:8090/stream.mjpg"
-  description: "video stream url"
+  description: "input video stream url"
   label: video stream url (e.x. http://192.168.12.254:8090/stream.mjpg)
   type: string
 
 # 传递int类型环境变量出错
 # - variable: frame_interval
-#   default: "5"
+#   default: "0"
 #   description: "frame capture interval, should be integer"
 #   label: frame capture interval
 #   type: string
