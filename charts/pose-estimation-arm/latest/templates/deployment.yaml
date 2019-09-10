@@ -28,8 +28,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
-        # - name: FRAME_INTERVAL
-        #   value: "5"
+        - name: FRAME_INTERVAL
+          value: {{ .Values.frame_interval }}
         - name: RES_URL
           value: {{ .Values.stream_url }}
         - name: HOST_URL

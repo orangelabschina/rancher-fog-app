@@ -21,11 +21,11 @@ questions:
   type: string
 
 # 传递int类型环境变量出错
-# - variable: frame_interval
-#   default: "5"
-#   description: "frame capture interval, should be integer"
-#   label: frame capture interval
-#   type: string
+- variable: frame_interval
+  default: 0
+  description: "frame capture interval, should be integer"
+  label: frame capture interval
+  type: int
 
 # - variable: beam_size
 #   default: "1"
