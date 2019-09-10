@@ -3,6 +3,11 @@ kind: Deployment
 metadata:
   name: openpose-deployment
 spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080
   selector:
     matchLabels:
       app: openpose
@@ -24,7 +29,9 @@ spec:
       containers:
       - name:  {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }} 
+        ports:
+        - containerPort: 8080
         env:
         # - name: FRAME_INTERVAL
         #   value: "5"
