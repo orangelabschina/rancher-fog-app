@@ -5,7 +5,8 @@
 image:
   repository: orangelabschina/image_caption_arm64
   tag: v1.1tfcpu
-  pullPolicy: IfNotPresent
+  #pullPolicy: IfNotPresent 
+  pullPolicy: Always
 
 #nodeSelector: {"worker1"}
 
