@@ -3,7 +3,7 @@ categories:
 - Fog
 questions:
 - variable: nodes
-  default: "nanotestworker1"
+  default: "k3testworker1"
   description: "which node will iotagent will be"
   label: select node
   type: string
