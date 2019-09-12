@@ -15,9 +15,9 @@ questions:
   type: string
 
 - variable: host_url
-  default: "http://192.168.12.152:30080"
+  default: "http://192.168.12.150:30080"
   description: "output video stream url"
-  label: video stream url (e.x. http://192.168.12.152:30080)
+  label: video stream url (e.x. http://192.168.12.150:30080)
   type: string
 
 ## 传递int类型环境变量出错
