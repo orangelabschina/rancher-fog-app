@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fire-deployment
+spec:
+  selector:
+    matchLabels:
+      app: firedetect
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: firedetect
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - {{ .Values.nodes }}
+      containers:
+      - name:  {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env: 
+        - name: RES_URL
+          value: {{ .Values.stream_url }}   
+
+        resources: 
+          nvidia.com/gpu: 1 # requesting 1 GPU
+
+
+      - name: result-publisher
+        image: orangelabschina/result_publisher
+        env:
+        - name: TASKID
+          value: {{ .Values.task_id }}
+        - name: ORION_HOST_PORT
+          value: {{ .Values.orion_host_port }}
+      - name: message-queue
+        image: redis
+        ports:
+        - containerPort: 6379

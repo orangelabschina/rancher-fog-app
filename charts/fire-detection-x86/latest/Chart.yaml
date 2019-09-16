@@ -1,21 +1,21 @@
-name: pose-estimation-arm
+name: fire-detection-x86
 version: 0.1
 appVersion: 0.1
-description: Orange Labs China Pose Estimation
+description: Orange Labs China Fire Detection
 keywords:
 - IoT
 - NGSI
 - FOG
-- Pose Estimation
 - AI
+- Fire Detection
 home: https://www.orange.com
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png
 sources:
-- https://gitlab.forge.orange-labs.fr/fogplatform/pose-estimation-arm
+- https://gitlab.forge.orange-labs.fr/ 
 maintainers:
 - name: li.jiang
   email: li.jiang@orange.com
-- name: yanjun.chen
-  email: yanjun.chen@orange.com 
 - name: kun.qian
-  email: kun.qian@orange.com 
+  email: kun.qian@orange.com
+- name: yanjun.chen
+  email: yanjun.chen@orange.com

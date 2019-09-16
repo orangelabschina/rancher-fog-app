@@ -1,0 +1,28 @@
+categories:
+- IoT
+- Fog
+questions:
+- variable: nodes
+  default: "ai-super-server"
+  description: "which node will iotagent will be"
+  label: select node
+  type: string
+
+- variable: stream_url
+  default: "http://192.168.12.254:8090/stream.mjpg"
+  description: "input video stream url"
+  label: video stream url (e.x. http://192.168.12.254:8090/stream.mjpg)
+  type: string
+
+- variable: task_id
+  default: "FIRE_x86_0001"
+  description: "task id"
+  label: task id should be unique (e.x. IMGCAP_ARM_0001)
+  type: string
+
+- variable: orion_host_port
+  default: "192.168.12.222:32130"
+  description: "orion host and port"
+  label: orion host and port (e.x. 192.168.12.222:32130)
+  type: string
+
