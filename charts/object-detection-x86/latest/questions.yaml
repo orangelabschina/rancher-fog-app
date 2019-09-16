@@ -15,7 +15,7 @@ questions:
   type: string
 
 - variable: task_id
-  default: "FIRE_x86_0001"
+  default: "ObjectDetect_x86_0001"
   description: "task id"
   label: task id should be unique (e.x. IMGCAP_ARM_0001)
   type: string
