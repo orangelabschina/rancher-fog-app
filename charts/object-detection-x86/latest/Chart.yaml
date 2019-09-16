@@ -1,0 +1,21 @@
+name: object-detection-x86
+version: 0.1
+appVersion: 0.1
+description: Orange Labs China Object Detection
+keywords:
+- IoT
+- NGSI
+- FOG
+- AI
+- Object Detection
+home: https://www.orange.com
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png
+sources:
+- https://gitlab.forge.orange-labs.fr/ 
+maintainers:
+- name: li.jiang
+  email: li.jiang@orange.com
+- name: kun.qian
+  email: kun.qian@orange.com
+- name: yanjun.chen
+  email: yanjun.chen@orange.com
