@@ -1,4 +1,4 @@
 # Pose estimation
 
-An arm64 platform TensorFlow implementation of pose estimation.
+An x86 platform TensorFlow implementation of pose estimation.
 
