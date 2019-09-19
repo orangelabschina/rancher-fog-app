@@ -1,0 +1,12 @@
+# Default values for image-captioning-arm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: orangelabschina/pose_estimation_x86
+  tag: latest
+  #pullPolicy: IfNotPresent 
+  pullPolicy: Always
+
+#nodeSelector: {"worker1"}
+

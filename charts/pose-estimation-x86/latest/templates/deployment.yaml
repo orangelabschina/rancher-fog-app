@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openpose-deployment
+spec:
+  selector:
+    matchLabels:
+      app: openpose
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: openpose
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - {{ .Values.nodes }}
+      containers:
+      - name:  {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }} 
+        ports:
+        - containerPort: 8080
+        env:
+        - name: FRAME_INTERVAL
+          value: {{ .Values.frame_interval }}
+        - name: RES_URL
+          value: {{ .Values.stream_url }}
+        - name: HOST_URL
+          value: {{ .Values.host_url }}
+        # - name: beam_size
+        #   value: "1"
+        # - name: max_caption_length
+        #   value: "20"
+
+        # https://blog.csdn.net/weixin_36171533/article/details/82771934
+        # Handle "Deployment does not have minimum availability."
+        resources:
+          requests:
+            cpu: "1000m"         #cpu最低1000微核，既1个核
+            memory: "500Mi"   #内存最低是500M
+          limits:
+            cpu: "4000m"     #cpu最大是4核
+            memory: "3000Mi"   #内存最大是3000M
+            nvidia.com/gpu: 0 # requesting 1 GPU
+
+
+      - name: result-publisher
+        image: orangelabschina/result_publisher
+        env:
+        - name: TASKID
+          value: {{ .Values.task_id }}
+        - name: ORION_HOST_PORT
+          value: {{ .Values.orion_host_port }}
+      - name: message-queue
+        image: redis
+        ports:
+        - containerPort: 6379
