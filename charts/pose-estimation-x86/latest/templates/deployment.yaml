@@ -48,7 +48,7 @@ spec:
           limits:
             cpu: "4000m"     #cpu最大是4核
             memory: "3000Mi"   #内存最大是3000M
-            #nvidia.com/gpu: 1 # requesting 1 GPU, comment to expose all GPUs
+            nvidia.com/gpu: 1 # requesting 1 GPU, comment to expose all GPUs
 
 
       - name: result-publisher
