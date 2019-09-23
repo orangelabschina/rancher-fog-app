@@ -25,12 +25,15 @@ spec:
       - name:  {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 8080
         env: 
         - name: RES_URL
           value: {{ .Values.stream_url }}   
 
         resources: 
-          nvidia.com/gpu: 1 # requesting 1 GPU
+          limits:
+            nvidia.com/gpu: 1 # requesting 1 GPU
 
 
       - name: result-publisher
